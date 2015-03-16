@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>myblog - Pelican</title>
+        <title>基于Pelican和Github的静态博客</title>
         <meta charset="utf-8" />
 
 
@@ -41,24 +41,28 @@
               </ul>
             </div>
 
-<section id="content">
-
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="http://quyiqy.github.io/ji-yu-pelicanhe-githubde-jing-tai-bo-ke.html" rel="bookmark" title="Permalink to 基于Pelican和Github的静态博客">基于Pelican和Github的静态博客</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2015-03-16T14:06:00+08:00"> 2015-03-16 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="http://quyiqy.github.io/author/quyi.html"> quyi</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>写在开头的话</h2>
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://quyiqy.github.io/ji-yu-pelicanhe-githubde-jing-tai-bo-ke.html" rel="bookmark"
+                   title="Permalink to 基于Pelican和Github的静态博客">基于Pelican和Github的静态博客</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-03-16T14:06:00+08:00">
+                2015-03-16
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="http://quyiqy.github.io/author/quyi.html"> quyi</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>写在开头的话</h2>
 <p><em>首先感谢wwj大神对我的帮助，在他的帮助下，解决了我的许多疑惑。</em></p>
 <h1>让我们开始吧</h1>
 <p>你所看到的博客，是用Pelican搭建的。
@@ -74,26 +78,76 @@ Pelican是一套开源的使用Python编写的博客静态生成工具，它的�
 <li>git init #初始化git</li>
 <li>git add . #将工作区内容推送到暂存区</li>
 <li>git commit -m '你修改的内容' #提交暂存区内容</li>
-<li>git remote add origin http://github.com ...</li></ol> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="http://quyiqy.github.io/ji-yu-pelicanhe-githubde-jing-tai-bo-ke.html" rel="bookmark" title="Permalink to 基于Pelican和Github的静态博客">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="http://quyiqy.github.io/tag/pelican.html">Pelican</a>
-                                            <a class="danger label" href="http://quyiqy.github.io/tag/github.html">github</a>
-                                            <a class="danger label" href="http://quyiqy.github.io/tag/python.html">Python</a>
-                                </div>
+<li>git remote add origin http://github.com/yourname/yourname.github.io.git #将本地仓库与远程仓库链接起来</li>
+<li>git push -u origin master #将本地修改推送至远程</li>
+</ol>
+<p>本文环境是ubuntu 14.04</p>
+<h1>安装Pelican</h1>
+<div class="highlight"><pre>pip install pelican
+</pre></div>
 
 
+<p>安装markdown库，博主是利用vim作为编辑器，利用chrome的markdown preview plus扩展来写的</p>
+<div class="highlight"><pre>pip install Markdown
+</pre></div>
 
-                        </article></li>
-                </ol><!-- /#posts-list -->
+
+<p>创建blog目录：</p>
+<div class="highlight"><pre>mkdir myblog
+cd myblog
+</pre></div>
+
+
+<p>创建博客:</p>
+<div class="highlight"><pre>pelican-quickstart
+</pre></div>
+
+
+<p>问题都可以直接默认回车设置，不能直接默认的按照提示设置。之后可再myblog文件下修改pelicanconf.py</p>
+<p>××至此，博客已经搭建好了××</p>
+<h1>写文章</h1>
+<p>××进入content目录，创建test.md××</p>
+<div class="highlight"><pre>cd content
+vim test.md
+</pre></div>
+
+
+<p>博客内容必须有日期，标题</p>
+<div class="highlight"><pre><span class="n">Date</span><span class="o">:</span><span class="mi">2015</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">16</span>
+<span class="n">Title</span><span class="o">:</span><span class="n">test</span>
+<span class="n">Tags</span><span class="o">:</span><span class="n">pelican</span> <span class="n">github</span> <span class="err">#标签</span>
+<span class="n">category</span><span class="o">:</span><span class="n">test</span> <span class="err">#分类</span>
+<span class="n">Author</span><span class="o">:</span><span class="n">quyi</span>
+</pre></div>
+
+
+<p>××生成html××
+请务必再myblog文件路径下:</p>
+<div class="highlight"><pre>make html  #*在此感谢wwj大神的帮助*
+</pre></div>
+
+
+<p><strong>博客撰写完毕，准备上传</strong>
+进入output文件夹，发现多了一个test.html文件</p>
+<div class="highlight"><pre>cd output
+</pre></div>
+
+
+<p>××将博文推送到github××</p>
+<div class="highlight"><pre>git init
+git add .
+git commit -m &#39;first commit&#39;
+git remote add origin https://github.com/quyiqy/quyiqy.github.io.git #请将quyiqy替换为你的用户名
+git push -u origin master
+</pre></div>
+
+
+<p>推送完毕，可以通过访问quyiqy.github.io来访问我的博客了。</p>
+            </div><!-- /.entry-content -->
+
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -125,10 +179,8 @@ Pelican是一套开源的使用Python编写的博客静态生成工具，它的�
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
