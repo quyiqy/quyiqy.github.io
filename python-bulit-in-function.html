@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>Python常用内置函数整理</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">myblog </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/pythonchang-yong-nei-zhi-han-shu-zheng-li.html" rel="bookmark"
+           title="Permalink to Python常用内置函数整理">Python常用内置函数整理</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-03-18T00:00:00+01:00">
+                Published: 三 18 三月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/quyi.html">quyi</a>
+        </address>
+<p>In <a href="/category/python.html">python</a>. </p>
+
+</footer><!-- /.post-info -->      <h1><strong>整理一下常用的Python内置函数</strong></h1>
+<h2><strong>数学运算相关</strong></h2>
+<p>绝对值 abs(a):</p>
+<div class="highlight"><pre>abs(-10)=abs(10)=10
+</pre></div>
+
+
+<p>最大值 max(L):</p>
+<div class="highlight"><pre>max(1,2,3,4,1)=4
+</pre></div>
+
+
+<p>最小值 min(L)=</p>
+<div class="highlight"><pre>min(1,2,3,4,1,2,0)=0
+</pre></div>
+
+
+<p>len(L)表示L的长度,求长度 </p>
+<div class="highlight"><pre>len(1,2,3,4,5)=5
+</pre></div>
+
+
+<p>divmod(a,b)表示a除以b，和a除以b的余。  </p>
+<div class="highlight"><pre>divmod(2,3)=(2/3,2%3).
+</pre></div>
+
+
+<p>pow(a,b[,c])表示1,a的b次方。2.a的b次方除以c的余。 </p>
+<div class="highlight"><pre>pow(2,3)=2**3 
+pow(2,3,4)=2**3%4
+</pre></div>
+
+
+<p>round(a)表示浮点数  </p>
+<div class="highlight"><pre>round(3)=3.0
+</pre></div>
+
+
+<p>测试f函数是否可被调用。返回True或者False。  </p>
+<div class="highlight"><pre>​callable(f)
+</pre></div>
+
+
+<p>判断l是否为列表，整型，元组等形式。返回True或者False。 </p>
+<div class="highlight"><pre>isinstance(l,list/int/tuple...):
+</pre></div>
+
+
+<p>比较x,y x<y返回-1，x=y返回0,x>y返回1。#不同数据类型的时候，怎么判断？ </p>
+<div class="highlight"><pre>cmp(x,y):* x,y
+</pre></div>
+
+
+<p>快速生成列表</p>
+<div class="highlight"><pre>range():range(5)=[0,1,2,3,4].
+</pre></div>
+
+
+<p>快速生成一个列表对象 #大数据运算时快很多 </p>
+<div class="highlight"><pre>xrange():xrange(5)=xrange(5)
+</pre></div>
+
+
+<h2><strong>类型转化相关</strong></h2>
+<p>返回a的数据类型  </p>
+<div class="highlight"><pre> type(a):
+</pre></div>
+
+
+<p>将a转化为整形  </p>
+<div class="highlight"><pre>    int(a)
+</pre></div>
+
+
+<p>将a转化为长整形  </p>
+<div class="highlight"><pre>    long(a)
+</pre></div>
+
+
+<p>将a转化为浮点型  </p>
+<div class="highlight"><pre> float(a)
+</pre></div>
+
+
+<p>将a转化为复数  </p>
+<div class="highlight"><pre>complex(a)
+</pre></div>
+
+
+<p>将a转化为字符串   </p>
+<div class="highlight"><pre>str(a)
+</pre></div>
+
+
+<p>将a转化为列表  </p>
+<div class="highlight"><pre>list(a)
+</pre></div>
+
+
+<p>将a转化为元组   </p>
+<div class="highlight"><pre>tuple(a)
+</pre></div>
+
+
+<p>返回值为字符串，将a转化为16进制  </p>
+<div class="highlight"><pre>hex(a)
+</pre></div>
+
+
+<p>返回值为字符串，将a转化为8进制  </p>
+<div class="highlight"><pre>oct(a)
+</pre></div>
+
+
+<p>返回值为字符串，将a转化为2进制   </p>
+<div class="highlight"><pre>bin(a)
+</pre></div>
+
+
+<p>返回值为ASCII字符串，将a转化为一个对应的字符，允许范围是range(256)是ord()的配对函数   </p>
+<div class="highlight"><pre>chr(a)
+</pre></div>
+
+
+<p>返回值为ASCII数值/Unicode数值，是chr()的配对函数   </p>
+<div class="highlight"><pre>ord(&#39;a&#39;)
+</pre></div>
+
+
+<p>返回值为Unicode字符串，允许范围是range(65536)    </p>
+<div class="highlight"><pre>unichr(a)
+</pre></div>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
